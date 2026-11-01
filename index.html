@@ -100,4 +100,15 @@ function askAssistant(){let q=$('question').value.trim().toLowerCase();if(!q){sh
 document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.tool-card').forEach(card=>card.classList.toggle('hidden',btn.dataset.filter!=='all'&&card.dataset.category!==btn.dataset.filter))}));
 if($('year')) $('year').textContent=new Date().getFullYear();
 </script>
+  <footer class="footer">
+  <div class="wrap">
+    <p>© 2026 CalorieWise AI. All rights reserved.</p>
+    <p>
+      <a href="privacy.html">Privacy Policy</a> |
+      <a href="terms.html">Terms of Use</a> |
+      <a href="disclaimer.html">Disclaimer</a> |
+      <a href="mailto:ehtesham8958873@gmail.com">Contact</a>
+    </p>
+  </div>
+</footer>
 </body></html>
