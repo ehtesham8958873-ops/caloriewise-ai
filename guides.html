@@ -1,13 +1,313 @@
+
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Nutrition Guides – Calories, Diet & Healthy Eating | CalorieWise AI</title>
-<meta name="description" content="Explore easy nutrition guides about daily calories, healthy eating, weight management, protein, carbohydrates and balanced diets.">
-  <link rel="canonical" href="https://caloriewise-ai.pages.dev/guides.html">
-<style>body{margin:0;background:#f7fbf8;color:#183126;font:16px/1.7 system-ui,Arial}.wrap{max-width:850px;margin:auto;padding:30px 20px}a{color:#16834a}.brand{font-weight:800;font-size:22px;text-decoration:none;color:#0d5630}.card{background:#fff;border:1px solid #dce9df;border-radius:16px;padding:22px;margin:18px 0}h1{line-height:1.15}h2{margin-bottom:6px;color:#0d5630}.muted{color:#64756b}</style></head>
-<body><main class="wrap"><a class="brand" href="index.html">CalorieWise AI</a><h1>Calorie & Nutrition Guides</h1><p class="muted">Beginner-friendly educational articles. Estimates are not medical advice.</p>
-<article class="card"><h2>What are daily calories?</h2><p>Calories are a measure of energy. Your daily energy needs depend on factors such as age, body size, activity, health and individual metabolism. A calculator can provide a starting estimate, but it cannot measure your exact needs.</p></article>
-<article class="card"><h2>BMR vs TDEE: what is the difference?</h2><p>Basal metabolic rate (BMR) estimates the energy your body uses at rest. Total daily energy expenditure (TDEE) estimates energy used across a whole day, including activity. Many calculators estimate TDEE by multiplying BMR by an activity factor.</p></article>
-<article class="card"><h2>How to estimate calories in a meal</h2><p>Check portion size first. Weighing ingredients, reading food labels and using a reliable food composition database can improve estimates. Cooking oils, sauces and recipe ingredients can change the final total substantially.</p></article>
-<article class="card"><h2>Understanding protein, carbohydrates and fat</h2><p>Protein, carbohydrate and fat are macronutrients. Their appropriate amounts vary by age, activity, health and personal circumstances. Avoid treating generic macro splits as a prescription.</p></article>
-<article class="card"><h2>Why food calorie estimates vary</h2><p>Food variety, ripeness, cooking method, water content, recipe and serving size all affect calorie values. Use product packaging for branded foods and reputable food databases for general ingredients.</p></article>
-<p><a href="index.html">← Back to calculators</a></p></main></body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Nutrition Guides – Calories, BMR, TDEE & Healthy Eating | CalorieWise AI</title>
+
+<meta name="description" content="Learn about daily calorie needs, BMR, TDEE, meal calorie estimates, protein, carbohydrates and balanced nutrition with these beginner-friendly guides.">
+
+<link rel="canonical" href="https://caloriewise-ai.pages.dev/guides.html">
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f7fbf8;color:#183126;font:16px/1.8 system-ui,Arial}
+.wrap{max-width:850px;margin:auto;padding:30px 20px}
+a{color:#16834a}
+.brand{font-weight:800;font-size:22px;text-decoration:none;color:#0d5630}
+.card{background:#fff;border:1px solid #dce9df;border-radius:16px;padding:24px;margin:20px 0}
+h1{line-height:1.2;font-size:34px}
+h2{margin-bottom:8px;color:#0d5630;font-size:23px}
+h3{color:#0d5630;margin-bottom:5px}
+.muted{color:#64756b}
+li{margin-bottom:8px}
+.tip{background:#eaf7ef;padding:14px;border-radius:10px;margin-top:15px}
+@media(max-width:600px){h1{font-size:28px}.card{padding:17px}}
+</style>
+</head>
+
+<body>
+<main class="wrap">
+
+<a class="brand" href="index.html">CalorieWise AI</a>
+
+<h1>Calorie & Nutrition Guides</h1>
+
+<p class="muted">
+Explore beginner-friendly guides to understand calories, energy needs,
+macronutrients and everyday food choices. Learn how to use nutrition
+estimates more thoughtfully.
+</p>
+
+<article class="card">
+<h2>1. What Are Daily Calories and How Much Do You Need?</h2>
+
+<p>
+A calorie is a unit of energy. Your body uses energy to perform essential
+functions such as breathing, maintaining body temperature, moving and
+digesting food. The energy you get from food and drinks helps support
+these activities.
+</p>
+
+<p>
+Daily calorie needs are different for every person. Factors that influence
+energy requirements include age, height, body weight, physical activity,
+body composition and individual health circumstances.
+</p>
+
+<h3>What affects daily calorie needs?</h3>
+<ul>
+<li><strong>Age:</strong> Energy requirements can change throughout life.</li>
+<li><strong>Body size:</strong> Height, weight and body composition influence energy use.</li>
+<li><strong>Activity:</strong> Walking, exercise and physically demanding work use additional energy.</li>
+<li><strong>Individual factors:</strong> Health, metabolism and other circumstances can affect requirements.</li>
+</ul>
+
+<h3>How can a calorie calculator help?</h3>
+<p>
+A calorie calculator uses information such as age, height, weight and
+activity level to estimate daily energy requirements. You can use the
+result as a general starting point, not an exact measurement.
+</p>
+
+<p>
+For a more useful estimate, enter accurate information and select an
+activity level that reflects your usual routine.
+</p>
+
+<div class="tip">
+<strong>Try it:</strong>
+<a href="index.html#calculators">Use the Daily Calorie Calculator</a>
+to estimate your daily energy needs.
+</div>
+</article>
+
+<article class="card">
+<h2>2. BMR vs TDEE: Understanding the Difference</h2>
+
+<p>
+BMR and TDEE are two commonly used terms in nutrition calculators.
+Both describe energy expenditure, but they represent different things.
+Understanding the difference can help you interpret calculator results.
+</p>
+
+<h3>What is BMR?</h3>
+<p>
+Basal Metabolic Rate (BMR) estimates the energy your body needs at rest
+to support basic functions. These include breathing, circulation,
+cellular activity and maintaining normal body functions.
+</p>
+
+<h3>What is TDEE?</h3>
+<p>
+Total Daily Energy Expenditure (TDEE) estimates the total energy your
+body uses throughout a day. It includes resting energy expenditure,
+physical activity and the energy used to process food.
+</p>
+
+<h3>How are BMR and TDEE related?</h3>
+<p>
+Many online calculators estimate TDEE by multiplying an estimated
+resting energy value by an activity factor. A more active routine
+generally produces a higher estimate than a sedentary routine.
+</p>
+
+<ul>
+<li>BMR represents estimated resting energy needs.</li>
+<li>TDEE represents estimated total daily energy expenditure.</li>
+<li>Activity level helps explain the difference between the two estimates.</li>
+</ul>
+
+<div class="tip">
+<strong>Try it:</strong>
+<a href="index.html#calculators">Explore the BMR and TDEE Calculators</a>
+to compare these estimates.
+</div>
+</article>
+
+<article class="card">
+<h2>3. How to Estimate Calories in a Meal</h2>
+
+<p>
+Estimating meal calories starts with understanding the ingredients
+and the amount of each ingredient you eat. A meal made with rice,
+vegetables, meat and cooking oil can have very different calorie
+values depending on its portions and preparation.
+</p>
+
+<h3>Step 1: Identify the ingredients</h3>
+<p>
+Write down the foods included in your meal. Remember to include
+cooking oil, butter, sauces, dressings and other ingredients that
+may be easy to overlook.
+</p>
+
+<h3>Step 2: Check portion sizes</h3>
+<p>
+Food weight can make estimates more consistent. When possible,
+weigh ingredients using a kitchen scale. Otherwise, use a consistent
+measuring cup or serving size.
+</p>
+
+<h3>Step 3: Check reliable nutrition information</h3>
+<p>
+For packaged products, read the nutrition label and check whether
+the values refer to one serving or the entire package. For ordinary
+ingredients, use a reputable food composition database.
+</p>
+
+<h3>Step 4: Add the ingredient estimates</h3>
+<p>
+Estimate the calories for each ingredient and add them together.
+Remember that shared recipes and restaurant meals may have uncertain
+ingredient quantities.
+</p>
+
+<div class="tip">
+<strong>Helpful tool:</strong>
+<a href="index.html#calculators">Use the Food Calorie and Meal Calorie Calculators</a>
+for simple estimates.
+</div>
+</article>
+
+<article class="card">
+<h2>4. Understanding Protein, Carbohydrates and Fat</h2>
+
+<p>
+Protein, carbohydrates and fat are the three main macronutrients.
+They provide energy and perform different functions in the body.
+A balanced eating pattern includes appropriate sources of these
+nutrients based on individual needs.
+</p>
+
+<h3>Protein</h3>
+<p>
+Protein helps build and maintain body tissues. Food sources include
+eggs, fish, poultry, milk, yogurt, beans, lentils, tofu and nuts.
+The amount a person needs can vary with age, health and activity.
+</p>
+
+<h3>Carbohydrates</h3>
+<p>
+Carbohydrates provide energy. Sources include rice, bread, oats,
+potatoes, fruits, vegetables and legumes. Whole grains, fruits
+and vegetables can also provide dietary fibre.
+</p>
+
+<h3>Fat</h3>
+<p>
+Dietary fat supports several normal body functions and helps the
+body absorb certain vitamins. Sources include nuts, seeds, olive
+oil, avocados and fish.
+</p>
+
+<h3>Why does balance matter?</h3>
+<p>
+Each macronutrient has a different role. A suitable balance depends
+on personal circumstances, food preferences, health and lifestyle.
+A generic percentage split should not be treated as a prescription.
+</p>
+
+<div class="tip">
+<strong>Try it:</strong>
+<a href="index.html#calculators">Explore the Protein, Carbohydrate,
+Fat and Macro Calculators</a>.
+</div>
+</article>
+
+<article class="card">
+<h2>5. Why Food Calorie Estimates Can Vary</h2>
+
+<p>
+The calorie value of a food is not always identical across different
+servings or preparations. Even the same ingredient can have different
+nutrition values depending on its variety, water content and cooking method.
+</p>
+
+<h3>Common reasons for differences</h3>
+<ul>
+<li><strong>Portion size:</strong> A larger serving usually contains more calories.</li>
+<li><strong>Cooking method:</strong> Frying and added cooking oil can change the final value.</li>
+<li><strong>Ingredients:</strong> Sauces, sugar, butter and toppings add energy.</li>
+<li><strong>Water content:</strong> Cooking can change the weight and concentration of food.</li>
+<li><strong>Food variety:</strong> Different varieties of the same food may have different values.</li>
+</ul>
+
+<h3>How can you improve your estimates?</h3>
+<p>
+Use the nutrition label for packaged products and check the serving
+size carefully. For fresh ingredients, use a reputable food database
+and select an entry that matches the food's preparation method.
+</p>
+
+<p>
+Treat generic food calorie values as approximations. They are useful
+for learning and planning, but they cannot always represent the exact
+nutrition content of a homemade or restaurant meal.
+</p>
+
+<div class="tip">
+<strong>Helpful reminder:</strong>
+<a href="index.html#food">Explore the Common Food Calorie Guide</a>
+for approximate values of everyday foods.
+</div>
+</article>
+
+<article class="card">
+<h2>Frequently Asked Questions About Nutrition</h2>
+
+<h3>Are online calorie calculators accurate?</h3>
+<p>
+They provide estimates based on equations and information entered
+by the user. Actual energy needs can differ from calculator results.
+</p>
+
+<h3>Is BMR the same as daily calorie needs?</h3>
+<p>
+No. BMR estimates energy used at rest, while daily energy needs
+also include activity and other energy expenditure.
+</p>
+
+<h3>Should I follow the same macro ratio every day?</h3>
+<p>
+Not necessarily. Macronutrient needs differ between individuals.
+A general calculator result is not a personalized dietary prescription.
+</p>
+
+<h3>Are food calorie values exact?</h3>
+<p>
+No. Food values are estimates and can vary with portion size,
+ingredients, brands and preparation.
+</p>
+</article>
+
+<article class="card">
+<h2>About These Guides</h2>
+<p>
+CalorieWise AI publishes beginner-friendly educational information
+about calories, energy expenditure and nutrition tools. Our guides
+are intended to help readers understand common nutrition concepts
+and interpret calculator estimates.
+</p>
+
+<p>
+The information on this website is general education and is not
+medical advice. Individual nutrition needs vary. Consult a qualified
+healthcare professional or registered dietitian for personalized
+guidance, particularly when managing a medical condition.
+</p>
+
+<p>
+For questions about the website, contact:
+<strong>ehtesham8958873@gmail.com</strong>.
+</p>
+
+</article>
+
+<p><a href="index.html">← Back to CalorieWise AI calculators</a></p>
+
+</main>
+</body>
+</html>
