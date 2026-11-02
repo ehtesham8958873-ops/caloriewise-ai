@@ -138,7 +138,46 @@ const num=id=>Number($(id).value);
 function show(id,msg){$(id).innerHTML=msg}
 function validPositive(ids){return ids.every(id=>Number.isFinite(num(id))&&num(id)>0)}
 function bmr(sex,age,w,h){return 10*w+6.25*h-5*age+(sex==='male'?5:-161)}
-function dailyCalc(){let ids=['age','weight','height'];if(!validPositive(ids)||num('age')<18||num('age')>100||num('height')<120||num('height')>230){show('dailyResult','Enter valid adult age, weight and height.');return}let base=bmr($('sex').value,num('age'),num('weight'),num('height'))*num('activity');let g=$('goal').value;let target=base+(g==='lose'?-250:g==='gain'?250:0);show('dailyResult',`Estimated target: ${Math.round(target).toLocaleString()} kcal/day<small>Estimated BMR: ${Math.round(bmr($('sex').value,num('age'),num('weight'),num('height')))} kcal · Maintenance: ${Math.round(base)} kcal/day</small>`)}
+function dailyCalc(){
+function dailyCalc(){
+  let ids=['age','weight','height'];
+  if(!validPositive(ids)||num('age')<18||num('age')>100||num('height')<120||num('height')>230){
+    show('dailyResult','Enter valid adult age, weight and height.');
+    return;
+  }
+
+  let base=bmr($('sex').value,num('age'),num('weight'),num('height'))*num('activity');
+  let g=$('goal').value;
+  let target=base+(g==='lose'?-250:g==='gain'?250:0);
+
+  show('dailyResult', `
+    <div style="text-align:center;padding:8px 4px;">
+      <div style="font-size:14px;color:#52715e;font-weight:700;margin-bottom:5px;">
+        YOUR DAILY CALORIE TARGET
+      </div>
+      <div style="font-size:30px;font-weight:850;color:#16834a;">
+        ${Math.round(target).toLocaleString()} <span style="font-size:17px;">kcal/day</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px;">
+        <div style="background:#fff;padding:12px;border:1px solid #dce9df;border-radius:12px;">
+          <div style="font-size:12px;color:#64756b;">Estimated BMR</div>
+          <div style="font-size:18px;font-weight:800;color:#0d5630;">
+            ${Math.round(bmr($('sex').value,num('age'),num('weight'),num('height'))).toLocaleString()}
+          </div>
+          <small>kcal/day</small>
+        </div>
+        <div style="background:#fff;padding:12px;border:1px solid #dce9df;border-radius:12px;">
+          <div style="font-size:12px;color:#64756b;">Maintenance</div>
+          <div style="font-size:18px;font-weight:800;color:#0d5630;">
+            ${Math.round(base).toLocaleString()}
+          </div>
+          <small>kcal/day</small>
+        </div>
+      </div>
+    </div>
+  `);
+}
+
 function bmrCalc(){let ids=['bage','bweight','bheight'];if(!validPositive(ids)||num('bage')<18||num('bage')>100){show('bmrResult','Enter valid adult details.');return}show('bmrResult',`Estimated BMR: ${Math.round(bmr($('bsex').value,num('bage'),num('bweight'),num('bheight'))).toLocaleString()} kcal/day`)}
 function tdeeCalc(){if(!validPositive(['tdeeBmr'])){show('tdeeResult','Enter a valid BMR.');return}show('tdeeResult',`Estimated TDEE: ${Math.round(num('tdeeBmr')*num('tdeeActivity')).toLocaleString()} kcal/day`)}
 function foodCalc(){if(!validPositive(['servings'])){show('foodResult','Enter a serving amount greater than zero.');return}show('foodResult',`Estimated calories: ${Math.round(num('foodSelect')*num('servings'))} kcal<small>Approximate reference value; check package labels for exact products.</small>`)}
