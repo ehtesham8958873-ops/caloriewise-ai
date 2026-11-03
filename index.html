@@ -144,7 +144,6 @@ function show(id,msg){$(id).innerHTML=msg}
 function validPositive(ids){return ids.every(id=>Number.isFinite(num(id))&&num(id)>0)}
 function bmr(sex,age,w,h){return 10*w+6.25*h-5*age+(sex==='male'?5:-161)}
 function dailyCalc(){
-function dailyCalc(){
   let ids=['age','weight','height'];
   if(!validPositive(ids)||num('age')<18||num('age')>100||num('height')<120||num('height')>230){
     show('dailyResult','Enter valid adult age, weight and height.');
