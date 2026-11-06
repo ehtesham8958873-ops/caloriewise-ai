@@ -308,10 +308,80 @@ function carbCalc(){
   show('carbResult',`Estimated carbohydrates: ${Math.round(c*p/100/4)} g/day`);
 }
 
-function fatCalc(){let c=num('fatCalories'),p=num('fatPercent');if(!validPositive(['fatCalories','fatPercent'])||p>100){show('fatResult','Enter valid calories and a percentage from 1 to 100.');return}show('fatResult',`Estimated fat: ${Math.round(c*p/100/9)} g/day`)}
-function macroCalc(){let c=num('macroCalories'),p=num('macroProtein'),cb=num('macroCarb'),f=num('macroFat');if(!validPositive(['macroCalories'])||[p,cb,f].some(x=>x<0||x>100)||Math.abs(p+cb+f-100)>.01){show('macroResult','Enter valid percentages that add up to 100%.');return}show('macroResult',`Protein: ${Math.round(c*p/100/4)} g · Carbs: ${Math.round(c*cb/100/4)} g · Fat: ${Math.round(c*f/100/9)} g`)}
-function mealCalc(){let ids=['meal1','meal2','meal3','meal4'];if(ids.some(id=>!Number.isFinite(num(id))||num(id)<0)){show('mealResult','Enter zero or a positive number for each food.');return}show('mealResult',`Estimated meal total: ${ids.reduce((s,id)=>s+num(id),0).toLocaleString()} kcal`)}
-function plannerCalc(){if(!validPositive(['maintain'])){show('plannerResult','Enter a valid maintenance estimate.');return}show('plannerResult',`Illustrative goal estimate: ${(num('maintain')+num('adjust')).toLocaleString()} kcal/day<small>Small adjustments are examples only; personal needs and safety vary.</small>`)}
+
+function fatCalc(){
+  let c=num('fatCalories'),p=num('fatPercent');
+
+  if(!validPositive(['fatCalories','fatPercent'])||p>100){
+    show('fatResult','Enter valid calories and a percentage from 1 to 100.');
+    return;
+  }
+
+  // GA4 Event Tracking
+  if (typeof gtag === 'function') {
+    gtag('event', 'calculator_used', {
+      calculator_name: 'Fat Calculator'
+    });
+  }
+
+  show('fatResult',`Estimated fat: ${Math.round(c*p/100/9)} g/day`);
+}
+
+
+function fatCalc(){
+  let c=num('fatCalories'),p=num('fatPercent');
+
+  if(!validPositive(['fatCalories','fatPercent'])||p>100){
+    show('fatResult','Enter valid calories and a percentage from 1 to 100.');
+    return;
+  }
+
+  // GA4 Event Tracking
+  if (typeof gtag === 'function') {
+    gtag('event', 'calculator_used', {
+      calculator_name: 'Fat Calculator'
+    });
+  }
+
+  show('fatResult',`Estimated fat: ${Math.round(c*p/100/9)} g/day`);
+}
+
+
+function mealCalc(){
+  let ids=['meal1','meal2','meal3','meal4'];
+
+  if(ids.some(id=>!Number.isFinite(num(id))||num(id)<0)){
+    show('mealResult','Enter zero or a positive number for each food.');
+    return;
+  }
+
+  // GA4 Event Tracking
+  if (typeof gtag === 'function') {
+    gtag('event', 'calculator_used', {
+      calculator_name: 'Meal Calorie Calculator'
+    });
+  }
+
+  show('mealResult',`Estimated meal total: ${ids.reduce((s,id)=>s+num(id),0).toLocaleString()} kcal`);
+}
+
+
+function plannerCalc(){
+  if(!validPositive(['maintain'])){
+    show('plannerResult','Enter a valid maintenance estimate.');
+    return;
+  }
+
+  // GA4 Event Tracking
+  if (typeof gtag === 'function') {
+    gtag('event', 'calculator_used', {
+      calculator_name: 'Energy Needs & Goal Planner'
+    });
+  }
+
+  show('plannerResult',`Illustrative goal estimate: ${(num('maintain')+num('adjust')).toLocaleString()} kcal/day<small>Small adjustments are examples only; personal needs and safety vary.</small>`);
+}
+
 function askAssistant(){let q=$('question').value.trim().toLowerCase();if(!q){show('assistantResult','Please enter a question first.');return}let answer='For a useful nutrition check, look at serving size, calories per serving, protein, carbohydrate, total fat, fiber, sodium and added sugars. Compare the serving size with the amount you actually eat. Values vary by brand and preparation. For personal dietary advice, consult a registered dietitian.';if(q.includes('protein'))answer='Protein is found in foods such as eggs, fish, poultry, dairy, beans, lentils, tofu and nuts. The amount that suits a person depends on age, activity, health and goals. Food labels and a qualified dietitian can help you plan an appropriate intake.';else if(q.includes('calorie')||q.includes('weight'))answer='Calorie calculators provide estimates, not exact measurements. Energy needs depend on age, body size, activity, health and other factors. Avoid extreme restriction; seek individualized advice from a qualified healthcare professional or registered dietitian.';else if(q.includes('rice')||q.includes('food'))answer='Food calories depend on portion size, ingredients and cooking method. Weighing a portion and checking a reliable food database or product label gives a better estimate than relying on a generic serving.';show('assistantResult',answer+'<small>Basic built-in guidance only — not a live AI response.</small>')}
 document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.tool-card').forEach(card=>card.classList.toggle('hidden',btn.dataset.filter!=='all'&&card.dataset.category!==btn.dataset.filter))}));
 if($('year')) $('year').textContent=new Date().getFullYear();
