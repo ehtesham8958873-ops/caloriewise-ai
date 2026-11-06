@@ -328,24 +328,33 @@ function fatCalc(){
 }
 
 
-function fatCalc(){
-  let c=num('fatCalories'),p=num('fatPercent');
 
-  if(!validPositive(['fatCalories','fatPercent'])||p>100){
-    show('fatResult','Enter valid calories and a percentage from 1 to 100.');
+function macroCalc(){
+  let c=num('macroCalories');
+  let p=num('macroProtein');
+  let cb=num('macroCarb');
+  let f=num('macroFat');
+
+  if(
+    !validPositive(['macroCalories']) ||
+    [p,cb,f].some(x=>!Number.isFinite(x)||x<0||x>100) ||
+    Math.abs(p+cb+f-100)>.01
+  ){
+    show('macroResult','Enter valid percentages that add up to 100%.');
     return;
   }
 
   // GA4 Event Tracking
   if (typeof gtag === 'function') {
     gtag('event', 'calculator_used', {
-      calculator_name: 'Fat Calculator'
+      calculator_name: 'Macro Calculator'
     });
   }
 
-  show('fatResult',`Estimated fat: ${Math.round(c*p/100/9)} g/day`);
+  show('macroResult',
+    `Protein: ${Math.round(c*p/100/4)} g · Carbs: ${Math.round(c*cb/100/4)} g · Fat: ${Math.round(c*f/100/9)} g`
+  );
 }
-
 
 function mealCalc(){
   let ids=['meal1','meal2','meal3','meal4'];
