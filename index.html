@@ -270,7 +270,25 @@ function foodCalc(){
   show('foodResult',`Estimated calories: ${Math.round(num('foodSelect')*num('servings'))} kcal<small>Approximate reference value; check package labels for exact products.</small>`);
 }
 
-function proteinCalc(){if(!validPositive(['pweight'])){show('proteinResult','Enter a valid weight.');return}let g=num('pweight')*num('pactivity');show('proteinResult',`Estimated reference amount: ${Math.round(g)} g protein/day<small>Needs vary with health, age and training. This is not a personalized prescription.</small>`)}
+
+function proteinCalc(){
+  if(!validPositive(['pweight'])){
+    show('proteinResult','Enter a valid weight.');
+    return;
+  }
+
+  let g=num('pweight')*num('pactivity');
+
+  // GA4 Event Tracking
+  if (typeof gtag === 'function') {
+    gtag('event', 'calculator_used', {
+      calculator_name: 'Protein Calculator'
+    });
+  }
+
+  show('proteinResult',`Estimated reference amount: ${Math.round(g)} g protein/day<small>Needs vary with health, age and training. This is not a personalized prescription.</small>`);
+}
+
 function carbCalc(){let c=num('carbCalories'),p=num('carbPercent');if(!validPositive(['carbCalories','carbPercent'])||p>100){show('carbResult','Enter valid calories and a percentage from 1 to 100.');return}show('carbResult',`Estimated carbohydrates: ${Math.round(c*p/100/4)} g/day`)}
 function fatCalc(){let c=num('fatCalories'),p=num('fatPercent');if(!validPositive(['fatCalories','fatPercent'])||p>100){show('fatResult','Enter valid calories and a percentage from 1 to 100.');return}show('fatResult',`Estimated fat: ${Math.round(c*p/100/9)} g/day`)}
 function macroCalc(){let c=num('macroCalories'),p=num('macroProtein'),cb=num('macroCarb'),f=num('macroFat');if(!validPositive(['macroCalories'])||[p,cb,f].some(x=>x<0||x>100)||Math.abs(p+cb+f-100)>.01){show('macroResult','Enter valid percentages that add up to 100%.');return}show('macroResult',`Protein: ${Math.round(c*p/100/4)} g · Carbs: ${Math.round(c*cb/100/4)} g · Fat: ${Math.round(c*f/100/9)} g`)}
