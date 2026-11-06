@@ -236,7 +236,23 @@ function bmrCalc(){
   show('bmrResult',`Estimated BMR: ${Math.round(bmr($('bsex').value,num('bage'),num('bweight'),num('bheight'))).toLocaleString()} kcal/day`);
 }
 
-function tdeeCalc(){if(!validPositive(['tdeeBmr'])){show('tdeeResult','Enter a valid BMR.');return}show('tdeeResult',`Estimated TDEE: ${Math.round(num('tdeeBmr')*num('tdeeActivity')).toLocaleString()} kcal/day`)}
+
+function tdeeCalc(){
+  if(!validPositive(['tdeeBmr'])){
+    show('tdeeResult','Enter a valid BMR.');
+    return;
+  }
+
+  // GA4 Event Tracking
+  if (typeof gtag === 'function') {
+    gtag('event', 'calculator_used', {
+      calculator_name: 'TDEE Calculator'
+    });
+  }
+
+  show('tdeeResult',`Estimated TDEE: ${Math.round(num('tdeeBmr')*num('tdeeActivity')).toLocaleString()} kcal/day`);
+}
+
 function foodCalc(){if(!validPositive(['servings'])){show('foodResult','Enter a serving amount greater than zero.');return}show('foodResult',`Estimated calories: ${Math.round(num('foodSelect')*num('servings'))} kcal<small>Approximate reference value; check package labels for exact products.</small>`)}
 function proteinCalc(){if(!validPositive(['pweight'])){show('proteinResult','Enter a valid weight.');return}let g=num('pweight')*num('pactivity');show('proteinResult',`Estimated reference amount: ${Math.round(g)} g protein/day<small>Needs vary with health, age and training. This is not a personalized prescription.</small>`)}
 function carbCalc(){let c=num('carbCalories'),p=num('carbPercent');if(!validPositive(['carbCalories','carbPercent'])||p>100){show('carbResult','Enter valid calories and a percentage from 1 to 100.');return}show('carbResult',`Estimated carbohydrates: ${Math.round(c*p/100/4)} g/day`)}
