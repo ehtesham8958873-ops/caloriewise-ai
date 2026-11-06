@@ -183,7 +183,12 @@ function dailyCalc(){
   let base=bmr($('sex').value,num('age'),num('weight'),num('height'))*num('activity');
   let g=$('goal').value;
   let target=base+(g==='lose'?-250:g==='gain'?250:0);
-
+// GA4 Event Tracking
+if (typeof gtag === 'function') {
+  gtag('event', 'calculator_used', {
+    calculator_name: 'Daily Calorie Calculator'
+  });
+}
   show('dailyResult', `
     <div style="text-align:center;padding:8px 4px;">
       <div style="font-size:14px;color:#52715e;font-weight:700;margin-bottom:5px;">
