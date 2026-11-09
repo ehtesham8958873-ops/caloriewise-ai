@@ -1,45 +1,212 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Nutrition Guides – Calories, BMR, TDEE & Healthy Eating | CalorieWise AI</title>
+<title>Nutrition Guides: Calories, BMR, TDEE & Healthy Eating | CalorieWise AI</title>
 
-<meta name="description" content="Learn about daily calorie needs, BMR, TDEE, meal calorie estimates, protein, carbohydrates and balanced nutrition with these beginner-friendly guides.">
+<meta name="description" content="Explore free nutrition guides about daily calorie needs, BMR, TDEE, meal calories, protein, carbohydrates and healthy eating. Learn how to use calorie calculators.">
+
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="CalorieWise AI">
+<meta name="theme-color" content="#16834a">
 
 <link rel="canonical" href="https://caloriewise-ai.pages.dev/guides.html">
 
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nutrition Guides – Calories, BMR, TDEE & Healthy Eating">
+<meta property="og:description" content="Learn about calories, BMR, TDEE, macronutrients and everyday nutrition with free beginner-friendly guides from CalorieWise AI.">
+<meta property="og:url" content="https://caloriewise-ai.pages.dev/guides.html">
+<meta property="og:site_name" content="CalorieWise AI">
+<meta property="og:image" content="https://caloriewise-ai.pages.dev/og-image.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nutrition Guides | CalorieWise AI">
+<meta name="twitter:description" content="Free beginner-friendly guides about calories, BMR, TDEE and nutrition.">
+<meta name="twitter:image" content="https://caloriewise-ai.pages.dev/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Calorie & Nutrition Guides",
+  "description": "Beginner-friendly educational guides about daily calories, BMR, TDEE, meal calories and macronutrients.",
+  "url": "https://caloriewise-ai.pages.dev/guides.html",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "CalorieWise AI",
+    "url": "https://caloriewise-ai.pages.dev/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CalorieWise AI",
+    "url": "https://caloriewise-ai.pages.dev/"
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Daily Calorie Needs",
+        "url": "https://caloriewise-ai.pages.dev/guides.html#daily-calories"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "BMR vs TDEE",
+        "url": "https://caloriewise-ai.pages.dev/guides.html#bmr-tdee"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "How to Estimate Calories in a Meal",
+        "url": "https://caloriewise-ai.pages.dev/guides.html#meal-calories"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Protein, Carbohydrates and Fat",
+        "url": "https://caloriewise-ai.pages.dev/guides.html#macronutrients"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "Why Food Calorie Estimates Vary",
+        "url": "https://caloriewise-ai.pages.dev/guides.html#food-calorie-variation"
+      }
+    ]
+  }
+}
+</script>
+
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#f7fbf8;color:#183126;font:16px/1.8 system-ui,Arial}
-.wrap{max-width:850px;margin:auto;padding:30px 20px}
+html{scroll-behavior:smooth}
+body{
+ margin:0;
+ background:#f7fbf8;
+ color:#183126;
+ font:16px/1.8 system-ui,Arial,sans-serif
+}
+.wrap{
+ max-width:900px;
+ margin:auto;
+ padding:28px 20px 45px
+}
 a{color:#16834a}
-.brand{font-weight:800;font-size:22px;text-decoration:none;color:#0d5630}
-.card{background:#fff;border:1px solid #dce9df;border-radius:16px;padding:24px;margin:20px 0}
-h1{line-height:1.2;font-size:34px}
-h2{margin-bottom:8px;color:#0d5630;font-size:23px}
-h3{color:#0d5630;margin-bottom:5px}
+a:hover{color:#0d5630}
+a:focus-visible{
+ outline:3px solid #16834a;
+ outline-offset:4px
+}
+.brand{
+ font-weight:800;
+ font-size:23px;
+ text-decoration:none;
+ color:#0d5630
+}
+.breadcrumb{
+ margin:12px 0 22px;
+ color:#64756b;
+ font-size:14px
+}
+.breadcrumb a{text-decoration:none}
+h1{
+ color:#0d5630;
+ line-height:1.2;
+ font-size:36px;
+ margin:12px 0
+}
+h2{
+ margin-bottom:8px;
+ color:#0d5630;
+ font-size:24px;
+ line-height:1.35
+}
+h3{
+ color:#0d5630;
+ margin-bottom:5px;
+ font-size:18px
+}
+p{margin:12px 0}
 .muted{color:#64756b}
-li{margin-bottom:8px}
-.tip{background:#eaf7ef;padding:14px;border-radius:10px;margin-top:15px}
-@media(max-width:600px){h1{font-size:28px}.card{padding:17px}}
+.card{
+ background:#fff;
+ border:1px solid #dce9df;
+ border-radius:16px;
+ padding:25px;
+ margin:22px 0;
+ box-shadow:0 4px 14px rgba(20,70,40,.04)
+}
+.card li{margin-bottom:8px}
+.tip{
+ background:#eaf7ef;
+ border-left:4px solid #16834a;
+ padding:14px 16px;
+ border-radius:10px;
+ margin-top:17px
+}
+.page-links{
+ background:#fff;
+ border:1px solid #dce9df;
+ padding:20px;
+ border-radius:14px;
+ margin:22px 0
+}
+.page-links a{
+ display:inline-block;
+ margin:5px 10px 5px 0
+}
+footer{
+ margin-top:30px;
+ padding:20px;
+ background:#0d5630;
+ color:#fff;
+ border-radius:14px;
+ text-align:center
+}
+footer a{color:#fff}
+@media(max-width:600px){
+ .wrap{padding:20px 15px 35px}
+ h1{font-size:29px}
+ h2{font-size:21px}
+ .card{padding:18px}
+}
 </style>
 </head>
 
 <body>
 <main class="wrap">
 
-<a class="brand" href="index.html">CalorieWise AI</a>
+<header>
+<a class="brand" href="https://caloriewise-ai.pages.dev/">CalorieWise AI</a>
 
-<h1>Calorie & Nutrition Guides</h1>
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="https://caloriewise-ai.pages.dev/">Home</a>
+<span aria-hidden="true"> › </span>
+<span aria-current="page">Nutrition Guides</span>
+</nav>
+</header>
+
+<h1>Calorie &amp; Nutrition Guides</h1>
 
 <p class="muted">
 Explore beginner-friendly guides to understand calories, energy needs,
 macronutrients and everyday food choices. Learn how to use nutrition
-estimates more thoughtfully.
+estimates more thoughtfully and make informed decisions about food.
 </p>
+
+<nav class="page-links" aria-label="Guide contents">
+<strong>Explore these guides:</strong><br>
+<a href="#daily-calories">Daily Calories</a>
+<a href="#bmr-tdee">BMR vs TDEE</a>
+<a href="#meal-calories">Meal Calories</a>
+<a href="#macronutrients">Macronutrients</a>
+<a href="#food-calorie-variation">Food Calorie Estimates</a>
+</nav>
 
 <article class="card" id="daily-calories">
 <h2>1. What Are Daily Calories and How Much Do You Need?</h2>
@@ -79,7 +246,7 @@ activity level that reflects your usual routine.
 
 <div class="tip">
 <strong>Try it:</strong>
-<a href="index.html#daily-calorie-calculator">Use the Daily Calorie Calculator</a>
+<a href="https://caloriewise-ai.pages.dev/#daily-calorie-calculator">Use the Daily Calorie Calculator</a>
 to estimate your daily energy needs.
 </div>
 </article>
@@ -122,8 +289,10 @@ generally produces a higher estimate than a sedentary routine.
 
 <div class="tip">
 <strong>Try it:</strong>
-<a href="index.html#bmr-calculator">Explore the BMR Calculator</a> and <a href="index.html#tdee-calculator">TDEE Calculator</a>
-to compare these estimates.
+<a href="https://caloriewise-ai.pages.dev/#bmr-calculator">BMR Calculator</a>
+and
+<a href="https://caloriewise-ai.pages.dev/#tdee-calculator">TDEE Calculator</a>
+can help you compare these estimates.
 </div>
 </article>
 
@@ -167,7 +336,7 @@ ingredient quantities.
 
 <div class="tip">
 <strong>Helpful tool:</strong>
-<a href="index.html#meal-calorie-calculator">Use the Meal Calorie Calculator</a>
+<a href="https://caloriewise-ai.pages.dev/#meal-calorie-calculator">Use the Meal Calorie Calculator</a>
 for simple estimates.
 </div>
 </article>
@@ -212,7 +381,11 @@ A generic percentage split should not be treated as a prescription.
 
 <div class="tip">
 <strong>Try it:</strong>
-<a href="index.html#protein-calculator">Explore the Protein Calculator</a>, <a href="index.html#carbohydrate-calculator">Carbohydrate Calculator</a>, <a href="index.html#fat-calculator">Fat Calculator</a> and <a href="index.html#macro-calculator">Macro Calculator</a>.
+<a href="https://caloriewise-ai.pages.dev/#protein-calculator">Protein Calculator</a>,
+<a href="https://caloriewise-ai.pages.dev/#carbohydrate-calculator">Carbohydrate Calculator</a>,
+<a href="https://caloriewise-ai.pages.dev/#fat-calculator">Fat Calculator</a>
+and
+<a href="https://caloriewise-ai.pages.dev/#macro-calculator">Macro Calculator</a>.
 </div>
 </article>
 
@@ -249,12 +422,12 @@ nutrition content of a homemade or restaurant meal.
 
 <div class="tip">
 <strong>Helpful reminder:</strong>
-<a href="index.html#food">Explore the Common Food Calorie Guide</a>
+<a href="https://caloriewise-ai.pages.dev/#food">Explore the Common Food Calorie Guide</a>
 for approximate values of everyday foods.
 </div>
 </article>
 
-<article class="card" id="guide-extra-6">
+<article class="card" id="nutrition-faq">
 <h2>Frequently Asked Questions About Nutrition</h2>
 
 <h3>Are online calorie calculators accurate?</h3>
@@ -282,8 +455,9 @@ ingredients, brands and preparation.
 </p>
 </article>
 
-<article class="card" id="guide-extra-7">
+<article class="card" id="about-guides">
 <h2>About These Guides</h2>
+
 <p>
 CalorieWise AI publishes beginner-friendly educational information
 about calories, energy expenditure and nutrition tools. Our guides
@@ -300,13 +474,29 @@ guidance, particularly when managing a medical condition.
 
 <p>
 For questions about the website, contact:
-<strong>ehtesham8958873@gmail.com</strong>.
+<a href="mailto:ehtesham8958873@gmail.com">ehtesham8958873@gmail.com</a>.
 </p>
-
 </article>
 
-<p><a href="index.html#calculators">Browse all 10 calculators</a> · <a href="index.html#food">Common Food Calorie Guide</a> · <a href="index.html#assistant">AI Nutrition Assistant</a></p><p><a href="index.html">← Back to CalorieWise AI homepage</a></p>
+<nav class="page-links" aria-label="More CalorieWise AI resources">
+<strong>Explore more:</strong><br>
+<a href="https://caloriewise-ai.pages.dev/#calculators">Browse all 10 calculators</a>
+<a href="https://caloriewise-ai.pages.dev/#food">Common Food Calorie Guide</a>
+<a href="https://caloriewise-ai.pages.dev/#assistant">AI Nutrition Assistant</a>
+</nav>
+
+<footer>
+<p><strong>CalorieWise AI</strong></p>
+<p>
+<a href="https://caloriewise-ai.pages.dev/">Home</a> |
+<a href="https://caloriewise-ai.pages.dev/privacy.html">Privacy Policy</a> |
+<a href="https://caloriewise-ai.pages.dev/terms.html">Terms</a> |
+<a href="https://caloriewise-ai.pages.dev/disclaimer.html">Disclaimer</a>
+</p>
+<p>Free calorie and nutrition tools for everyday learning.</p>
+</footer>
 
 </main>
 </body>
 </html>
+
