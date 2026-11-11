@@ -127,22 +127,54 @@ footer a{display:block;margin:4px 0}
   </div>
 </footer>
 
+
 <script>
 document.getElementById('go').addEventListener('click', function () {
+
   var cal = parseFloat(document.getElementById('cal').value);
   var p = parseFloat(document.getElementById('p').value);
   var c = parseFloat(document.getElementById('c').value);
   var f = parseFloat(document.getElementById('f').value);
+
   var out = document.getElementById('result');
   var next = document.getElementById('next');
-  if (!(cal > 0)) {
-    out.textContent = 'Please enter your daily calories.';
+
+  if (!Number.isFinite(cal) || cal < 800 || cal > 6000) {
+    out.textContent = 'Please enter calories between 800 and 6000.';
     next.hidden = true;
     return;
   }
-  if (!(p >= 0 && c >= 0 && f >= 0) || Math.round(p + c + f) !== 100) {
-    out.textContent = 'Percentages should total 100% (now ' + (p + c + f || 0) + '%).';
+
+  if (
+    !Number.isFinite(p) ||
+    !Number.isFinite(c) ||
+    !Number.isFinite(f) ||
+    p < 0 || c < 0 || f < 0 ||
+    p > 100 || c > 100 || f > 100
+  ) {
+    out.textContent = 'Please enter valid percentages.';
     next.hidden = true;
     return;
   }
-  out.innerHTML = 'Protein: ' + Math.round(cal * p /
+
+  var total = p + c + f;
+
+  if (Math.abs(total - 100) > 0.01) {
+    out.textContent = 'Percentages must total 100%. Current: ' + total.toFixed(1) + '%';
+    next.hidden = true;
+    return;
+  }
+
+  var protein = Math.round(cal * p / 400);
+  var carbs = Math.round(cal * c / 400);
+  var fat = Math.round(cal * f / 900);
+
+  out.textContent =
+    'Protein: ' + protein + 'g | ' +
+    'Carbs: ' + carbs + 'g | ' +
+    'Fat: ' + fat + 'g';
+
+  next.hidden = false;
+
+});
+</script>
