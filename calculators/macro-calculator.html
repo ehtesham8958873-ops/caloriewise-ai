@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Macro Calculator – Daily Protein, Carbs and Fat in Grams | CalorieWise AI</title>
+<meta name="description" content="Use our free macro calculator to turn your daily calorie goal into grams of protein, carbohydrates and fat. Choose your own percentages and plan balanced meals.">
+<link rel="canonical" href="https://caloriewise-ai.pages.dev/calculators/macro-calculator.html">
+<meta property="og:title" content="Free Macro Calculator | CalorieWise AI">
+<meta property="og:description" content="Convert calories into grams of protein, carbs and fat. Free, no account needed.">
+<meta property="og:url" content="https://caloriewise-ai.pages.dev/calculators/macro-calculator.html">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://caloriewise-ai.pages.dev/"},
+{"@type":"ListItem","position":2,"name":"Calculators","item":"https://caloriewise-ai.pages.dev/calculators/"},
+{"@type":"ListItem","position":3,"name":"Macro Calculator","item":"https://caloriewise-ai.pages.dev/calculators/macro-calculator.html"}]}
+</script>
+<style>
+:root{--bg:#fff;--fg:#1c2b24;--muted:#5b6b63;--brand:#1f8a5b;--card:#f3f8f5;--line:#d8e5de}
+@media (prefers-color-scheme:dark){:root{--bg:#121a16;--fg:#e6efe9;--muted:#9fb1a7;--brand:#4cc78f;--card:#1a2420;--line:#2a3a32}}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--fg)}
+a{color:var(--brand)}
+header,footer,main{max-width:860px;margin:0 auto;padding:16px 20px}
+header{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+.logo{font-weight:700;font-size:1.2rem;text-decoration:none}
+header nav a{margin-right:16px;text-decoration:none}
+.crumbs{font-size:.9rem;color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;margin:20px 0}
+label{display:block;margin:12px 0 4px;font-weight:600}
+input,select{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg);font:inherit}
+button{margin-top:16px;padding:12px 20px;border:0;border-radius:8px;background:var(--brand);color:#fff;font:inherit;font-weight:600;cursor:pointer}
+#result{margin-top:16px;font-size:1.1rem;font-weight:600;line-height:1.8}
+.related ul,.more ul{padding-left:20px}
+footer{border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;font-size:.92rem}
+footer a{display:block;margin:4px 0}
+.muted{color:var(--muted);font-size:.9rem}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">CalorieWise AI</a>
+  <nav aria-label="Main">
+    <a href="/calculators/">Calculators</a>
+    <a href="/calculators/food-calorie-calculator.html">Food calories</a>
+    <a href="/guides.html">Guides</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/#about">About</a>
+  </nav>
+</header>
+
+<main>
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/calculators/">Calculators</a> › Macro Calculator</nav>
+
+  <h1>Free Macro Calculator</h1>
+  <p>Use this free macro calculator to turn your daily calorie goal into grams of protein, carbohydrates and fat. Don't know your calories yet? Start with the <a href="/calculators/calorie-calculator.html">daily calorie calculator</a> or the <a href="/calculators/tdee-calculator.html">TDEE calculator</a>.</p>
+
+  <div class="card">
+    <label for="cal">Daily calories (kcal)</label>
+    <input id="cal" type="number" min="800" max="6000" inputmode="numeric" placeholder="e.g. 2200">
+    <label for="p">Protein (%)</label>
+    <input id="p" type="number" min="0" max="100" inputmode="numeric" value="30">
+    <label for="c">Carbs (%)</label>
+    <input id="c" type="number" min="0" max="100" inputmode="numeric" value="40">
+    <label for="f">Fat (%)</label>
+    <input id="f" type="number" min="0" max="100" inputmode="numeric" value="30">
+    <button id="go" type="button">Calculate macros</button>
+    <div id="result" aria-live="polite">Percentages should total 100%.</div>
+    <p id="next" class="muted" hidden>Want to check each one separately? Try the <a href="/calculators/protein-calculator.html">protein calculator</a>, <a href="/calculators/carb-calculator.html">carb calculator</a> or <a href="/calculators/fat-calculator.html">fat calculator</a>.</p>
+  </div>
+
+  <h2>How macros are calculated</h2>
+  <p>Protein and carbohydrates provide about 4 calories per gram, and fat provides about 9 calories per gram. Your calories are multiplied by each percentage, then divided by those values to give grams. Learn more in our <a href="/guides/protein-carbs-fat.html">guide to protein, carbs and fat</a>.</p>
+
+  <h2>Choosing your percentages</h2>
+  <p>There is no single correct split. The default of 30% protein, 40% carbs and 30% fat is just a balanced starting point. Your needs depend on your activity, preferences and health. If you only want a protein target based on body weight, use the <a href="/calculators/protein-calculator.html">protein calculator</a>.</p>
+
+  <p class="muted">This tool gives general educational estimates, not medical advice. See our <a href="/disclaimer.html">disclaimer</a>. Speak with a qualified healthcare professional or registered dietitian for personal advice.</p>
+
+  <section class="related">
+    <h2>Related calculators</h2>
+    <ul>
+      <li><a href="/calculators/protein-calculator.html">Try the free protein calculator</a></li>
+      <li><a href="/calculators/carb-calculator.html">Try the free carb calculator</a></li>
+      <li><a href="/calculators/fat-calculator.html">Try the free fat intake calculator</a></li>
+    </ul>
+  </section>
+
+  <section class="more">
+    <h2>Related guides</h2>
+    <ul>
+      <li><a href="/guides/protein-carbs-fat.html">Protein, carbs and fat basics</a></li>
+      <li><a href="/guides/daily-calorie-needs.html">How daily calorie needs work</a></li>
+      <li><a href="/guides.html">All nutrition guides</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div><strong>Calculators</strong>
+    <a href="/calculators/calorie-calculator.html">Daily Calorie Calculator</a>
+    <a href="/calculators/bmr-calculator.html">BMR Calculator</a>
+    <a href="/calculators/tdee-calculator.html">TDEE Calculator</a>
+    <a href="/calculators/protein-calculator.html">Protein Calculator</a>
+    <a href="/calculators/carb-calculator.html">Carbohydrate Calculator</a>
+    <a href="/calculators/fat-calculator.html">Fat Calculator</a>
+    <a href="/calculators/macro-calculator.html">Macro Calculator</a>
+    <a href="/calculators/meal-calorie-calculator.html">Meal Calorie Calculator</a>
+    <a href="/calculators/food-calorie-calculator.html">Food Calorie Calculator</a>
+    <a href="/calculators/calorie-goal-planner.html">Calorie Goal Planner</a>
+  </div>
+  <div><strong>Guides</strong>
+    <a href="/guides/daily-calorie-needs.html">Daily Calorie Needs Guide</a>
+    <a href="/guides/bmr-vs-tdee.html">BMR vs TDEE Guide</a>
+    <a href="/guides/how-to-calculate-your-tdee.html">How to Calculate Your TDEE</a>
+    <a href="/guides/protein-carbs-fat.html">Protein, Carbs and Fat Guide</a>
+    <a href="/guides/how-to-estimate-meal-calories.html">How to Estimate Meal Calories</a>
+    <a href="/guides/why-food-calories-vary.html">Why Food Calories Vary</a>
+  </div>
+  <div><strong>Site</strong>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Use</a>
+    <a href="/disclaimer.html">Disclaimer</a>
+    <p class="muted">© 2026 CalorieWise AI</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('go').addEventListener('click', function () {
+  var cal = parseFloat(document.getElementById('cal').value);
+  var p = parseFloat(document.getElementById('p').value);
+  var c = parseFloat(document.getElementById('c').value);
+  var f = parseFloat(document.getElementById('f').value);
+  var out = document.getElementById('result');
+  var next = document.getElementById('next');
+  if (!(cal > 0)) {
+    out.textContent = 'Please enter your daily calories.';
+    next.hidden = true;
+    return;
+  }
+  if (!(p >= 0 && c >= 0 && f >= 0) || Math.round(p + c + f) !== 100) {
+    out.textContent = 'Percentages should total 100% (now ' + (p + c + f || 0) + '%).';
+    next.hidden = true;
+    return;
+  }
+  out.innerHTML = 'Protein: ' + Math.round(cal * p /
