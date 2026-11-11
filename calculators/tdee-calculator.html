@@ -129,20 +129,39 @@ footer a{display:block;margin:4px 0}
   </div>
 </footer>
 
+
 <script>
 document.getElementById('go').addEventListener('click', function () {
-  var bmr = parseFloat(document.getElementById('bmr').value);
-  var act = parseFloat(document.getElementById('act').value);
+
+  var bmr = Number(document.getElementById('bmr').value);
+  var act = Number(document.getElementById('act').value);
+
   var out = document.getElementById('result');
   var next = document.getElementById('next');
-  if (!(bmr > 0)) {
-    out.textContent = 'Please enter a valid BMR.';
-    next.hidden = true;
+
+  next.hidden = true;
+
+  if (!Number.isFinite(bmr) || bmr < 800 || bmr > 4000) {
+    out.textContent = 'Please enter a BMR between 800 and 4000 kcal/day.';
     return;
   }
-  out.textContent = 'Estimated TDEE: ' + Math.round(bmr * act) + ' kcal/day';
+
+  var validFactors = [1.2, 1.375, 1.55, 1.725, 1.9];
+
+  if (!validFactors.includes(act)) {
+    out.textContent = 'Please select a valid activity level.';
+    return;
+  }
+
+  var tdee = Math.round(bmr * act);
+
+  out.textContent =
+    'Estimated TDEE: ' + tdee + ' kcal/day';
+
   next.hidden = false;
+
 });
 </script>
+
 </body>
 </html>
