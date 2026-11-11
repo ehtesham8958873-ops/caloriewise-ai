@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Daily Calorie Calculator – Maintain, Lose or Gain Weight | CalorieWise AI</title>
+<meta name="description" content="Use our free daily calorie calculator to estimate how many calories you need to maintain, lose or gain weight, based on your age, sex, height, weight and activity level.">
+<link rel="canonical" href="https://caloriewise-ai.pages.dev/calculators/calorie-calculator.html">
+<meta property="og:title" content="Free Daily Calorie Calculator | CalorieWise AI">
+<meta property="og:description" content="Estimate your daily calorie needs in seconds. Free, no account needed.">
+<meta property="og:url" content="https://caloriewise-ai.pages.dev/calculators/calorie-calculator.html">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://caloriewise-ai.pages.dev/"},
+{"@type":"ListItem","position":2,"name":"Calculators","item":"https://caloriewise-ai.pages.dev/calculators/"},
+{"@type":"ListItem","position":3,"name":"Daily Calorie Calculator","item":"https://caloriewise-ai.pages.dev/calculators/calorie-calculator.html"}]}
+</script>
+<style>
+:root{--bg:#fff;--fg:#1c2b24;--muted:#5b6b63;--brand:#1f8a5b;--card:#f3f8f5;--line:#d8e5de}
+@media (prefers-color-scheme:dark){:root{--bg:#121a16;--fg:#e6efe9;--muted:#9fb1a7;--brand:#4cc78f;--card:#1a2420;--line:#2a3a32}}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--fg)}
+a{color:var(--brand)}
+header,footer,main{max-width:860px;margin:0 auto;padding:16px 20px}
+header{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+.logo{font-weight:700;font-size:1.2rem;text-decoration:none}
+header nav a{margin-right:16px;text-decoration:none}
+.crumbs{font-size:.9rem;color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;margin:20px 0}
+label{display:block;margin:12px 0 4px;font-weight:600}
+input,select{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg);font:inherit}
+button{margin-top:16px;padding:12px 20px;border:0;border-radius:8px;background:var(--brand);color:#fff;font:inherit;font-weight:600;cursor:pointer}
+#result{margin-top:16px;font-size:1.1rem;font-weight:600}
+.related ul,.more ul{padding-left:20px}
+footer{border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;font-size:.92rem}
+footer a{display:block;margin:4px 0}
+.muted{color:var(--muted);font-size:.9rem}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">CalorieWise AI</a>
+  <nav aria-label="Main">
+    <a href="/calculators/">Calculators</a>
+    <a href="/calculators/food-calorie-calculator.html">Food calories</a>
+    <a href="/guides.html">Guides</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/#about">About</a>
+  </nav>
+</header>
+
+<main>
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/calculators/">Calculators</a> › Daily Calorie Calculator</nav>
+
+  <h1>Free Daily Calorie Calculator</h1>
+  <p>Use this free daily calorie calculator to estimate how many calories you need to maintain, lose or gain weight. It uses the Mifflin–St Jeor equation and your activity level. Want to see the steps separately? Try the <a href="/calculators/bmr-calculator.html">BMR calculator</a> and the <a href="/calculators/tdee-calculator.html">TDEE calculator</a>.</p>
+
+  <div class="card">
+    <label for="sex">Sex used by formula</label>
+    <select id="sex"><option value="m">Male</option><option value="f">Female</option></select>
+    <label for="age">Age (years)</label>
+    <input id="age" type="number" min="18" max="100" inputmode="numeric" placeholder="e.g. 30">
+    <label for="wt">Weight (kg)</label>
+    <input id="wt" type="number" min="30" max="300" step="0.1" inputmode="decimal" placeholder="e.g. 70">
+    <label for="ht">Height (cm)</label>
+    <input id="ht" type="number" min="120" max="230" inputmode="numeric" placeholder="e.g. 170">
+    <label for="act">Activity level</label>
+    <select id="act">
+      <option value="1.2">Sedentary (little or no exercise)</option>
+      <option value="1.375">Lightly active (1–3 days/week)</option>
+      <option value="1.55" selected>Moderately active (3–5 days/week)</option>
+      <option value="1.725">Very active (6–7 days/week)</option>
+      <option value="1.9">Extra active (hard training or physical job)</option>
+    </select>
+    <label for="goal">Goal</label>
+    <select id="goal">
+      <option value="0">Maintain weight</option>
+      <option value="-500">Weight loss (gentle deficit)</option>
+      <option value="500">Weight gain (gentle surplus)</option>
+    </select>
+    <button id="go" type="button">Calculate Calories</button>
+    <div id="result" aria-live="polite">Your estimate will appear here.</div>
+    <p id="warn" class="muted" hidden>This result is quite low. Very low calorie intake is generally not advised without guidance from a healthcare professional or registered dietitian.</p>
+    <p id="next" class="muted" hidden>Next step: <a href="/calculators/macro-calculator.html">split these calories into protein, carbs and fat</a>, or fine-tune with the <a href="/calculators/calorie-goal-planner.html">calorie goal planner</a>.</p>
+  </div>
+
+  <h2>How your daily calories are estimated</h2>
+  <p>First, your BMR is estimated with the Mifflin–St Jeor equation. It is then multiplied by an activity factor to get your maintenance calories (your TDEE). For weight loss or gain, a gentle adjustment of about 500 kcal per day is applied. Read the full explanation in our <a href="/guides/daily-calorie-needs.html">daily calorie needs guide</a>.</p>
+
+  <h2>Tips for using your result</h2>
+  <p>Treat the number as a starting point, not a strict rule. Real needs vary with metabolism, health and lifestyle. Compare how you feel and how your weight changes over a few weeks, then adjust. To understand the difference between resting and total needs, see <a href="/guides/bmr-vs-tdee.html">BMR vs TDEE explained</a>.</p>
+
+  <p class="muted">This tool gives general educational estimates, not medical advice. See our <a href="/disclaimer.html">disclaimer</a>. Speak with a qualified healthcare professional if you are under 18, pregnant, breastfeeding, have a medical condition, or have a history of disordered eating.</p>
+
+  <section class="related">
+    <h2>Related calculators</h2>
+    <ul>
+      <li><a href="/calculators/bmr-calculator.html">Try the free BMR calculator</a></li>
+      <li><a href="/calculators/tdee-calculator.html">Try the free TDEE calculator</a></li>
+      <li><a href="/calculators/calorie-goal-planner.html">Try the free calorie goal planner</a></li>
+    </ul>
+  </section>
+
+  <section class="more">
+    <h2>Related guides</h2>
+    <ul>
+      <li><a href="/guides/daily-calorie-needs.html">How daily calorie needs work</a></li>
+      <li><a href="/guides/bmr-vs-tdee.html">BMR vs TDEE explained</a></li>
+      <li><a href="/guides.html">All nutrition guides</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div><strong>Calculators</strong>
+    <a href="/calculators/calorie-calculator.html">Daily Calorie Calculator</a>
+    <a href="/calculators/bmr-calculator.html">BMR Calculator</a>
+    <a href="/calculators/tdee-calculator.html">TDEE Calculator</a>
+    <a href="/calculators/protein-calculator.html">Protein Calculator</a>
+    <a href="/calculators/carb-calculator.html">Carbohydrate Calculator</a>
+    <a href="/calculators/fat-calculator.html">Fat Calculator</a>
+    <a href="/calculators/macro-calculator.html">Macro Calculator</a>
+    <a href="/calculators/meal-calorie-calculator.html">Meal Calorie Calculator</a>
+    <a href="/calculators/food-calorie-calculator.html">Food Calorie Calculator</a>
+    <a href="/calculators/calorie-goal-planner.html">Calorie Goal Planner</a>
+  </div>
+  <div><strong>Guides</strong>
+    <a href="/guides/daily-calorie-needs.html">Daily Calorie Needs Guide</a>
+    <a href="/guides/bmr-vs-tdee.html">BMR vs TDEE Guide</a>
+    <a href="/guides/how-to-calculate-your-tdee.html">How to Calculate Your TDEE</a>
+    <a href="/guides/protein-carbs-fat.html">Protein, Carbs and Fat Guide</a>
+    <a href="/guides/how-to-estimate-meal-calories.html">How to Estimate Meal Calories</a>
+    <a href="/guides/why-food-calories-vary.html">Why Food Calories Vary</a>
+  </div>
+  <div><strong>Site</strong>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Use</a>
+    <a href="/disclaimer.html">Disclaimer</a>
+    <p class="muted">© 2026 CalorieWise AI</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('go').addEventListener('click', function () {
+  var sex = document.getElementById('sex').value;
+  var age = parseFloat(document.getElementById('age').value);
+  var wt = parseFloat(document.getElementById('wt').value);
+  var ht = parseFloat(document.getElementById('ht').value);
+  var act = parseFloat(document.getElementById('act').value);
+  var goal = parseFloat(document.getElementById('goal').value);
+  var out = document.getElementById('result');
+  var warn = document.getElementById('warn');
+  var next = document.getElementById('next');
+  if (!(age > 0 && wt > 0 && ht > 0)) {
+    out.textContent = 'Please enter valid age, weight and height.';
+    warn.hidden = true;
+    next.hidden = true;
+    return;
+  }
+  var bmr = 10 * wt + 6.25 * ht - 5 * age + (sex === 'm' ? 5 : -161);
+  var tdee = bmr * act;
+  var target = tdee + goal;
+  out.textContent = 'Maintenance: ' + Math.round(tdee) + ' kcal/day'
+    + (goal !== 0 ? ' | Goal estimate: ' + Math.round(target) + ' kcal/day' : '');
+  warn.hidden = !(target < 1200);
+  next.hidden = false;
+});
+</script>
+</body>
+</html>
