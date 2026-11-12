@@ -60,13 +60,21 @@ button.primary,#calculators .tool-card button.primary{display:inline-flex;align-
 @media(max-width:760px){.nav{padding:14px 0;align-items:flex-start;flex-direction:column}nav{gap:10px 15px}nav a{font-size:.86rem}.hero{padding:48px 0 40px}.hero h1{letter-spacing:-1.2px}.section{padding:42px 0}#calculators.section.wrap{width:calc(100% - 28px)}#calculators .tool-grid{grid-template-columns:1fr;gap:17px}#calculators .tool-card{padding:22px}.food-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:440px){.fields,.food-list,.hero-stats{grid-template-columns:1fr}.hero h1{font-size:2.35rem}#calculators .tool-card{padding:19px}}
 .tool-guide-link{margin:14px 0 0;padding-top:11px;border-top:1px solid var(--line);font-size:.88rem;color:var(--muted)}.tool-guide-link a{font-weight:750;text-decoration:none}.tool-guide-link a:hover{text-decoration:underline}
+.more-tools-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.more-tools-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow)}
+.more-tools-card h3{margin:0 0 8px;color:var(--deep);font-size:1.08rem}
+.more-tools-card p{margin:0 0 12px;color:var(--muted);font-size:.93rem}
+.more-tools-card a{font-weight:750;text-decoration:none}
+.more-tools-card a:hover{text-decoration:underline}
+@media(max-width:600px){.more-tools-grid{grid-template-columns:1fr}}
+
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"CalorieWise AI","description":"Free calorie and nutrition calculators","url":"https://caloriewise-ai.pages.dev/"}
 </script>
 </head>
 <body>
-<header class="top"><div class="wrap nav"><a class="brand" href="#">CalorieWise <span>AI</span></a><nav aria-label="Main navigation"><a href="#calculators">Calculators</a><a href="#food">Food calories</a><a href="#assistant">AI assistant</a><a href="guides.html">Guides</a><a href="#faq">FAQ</a><a href="#about">About</a></nav></div></header>
+<header class="top"><div class="wrap nav"><a class="brand" href="#">CalorieWise <span>AI</span></a><nav aria-label="Main navigation"><a href="#calculators">Calculators</a><a href="#more-tools">More tools & guides</a><a href="#food">Food calories</a><a href="#assistant">AI assistant</a><a href="guides.html">Guides</a><a href="#faq">FAQ</a><a href="#about">About</a></nav></div></header>
 <main>
 <section class="hero">
   <div class="wrap hero-grid">
@@ -138,6 +146,56 @@ button.primary,#calculators .tool-card button.primary{display:inline-flex;align-
 <article class="tool-card" id="meal-calorie-calculator-card" data-category="planning"><h3 id="meal-calorie-calculator">9. Meal Calorie Calculator</h3><p>Use our free meal calorie calculator to add calories from different foods and estimate the total calories in your meal. Make it easier to track your daily food intake and nutrition goals.</p><div class="fields"><div class="field"><label for="meal1">Food 1 calories</label><input id="meal1" type="number" min="0" value="250"></div><div class="field"><label for="meal2">Food 2 calories</label><input id="meal2" type="number" min="0" value="150"></div><div class="field"><label for="meal3">Food 3 calories</label><input id="meal3" type="number" min="0" value="100"></div><div class="field"><label for="meal4">Food 4 calories</label><input id="meal4" type="number" min="0" value="0"></div></div><button class="primary" onclick="mealCalc()">Calculate meal total</button><div class="result" id="mealResult" aria-live="polite">Your meal total will appear here.</div><p class="tool-guide-link">Related reading: <a href="guides.html#meal-calories">Learn about estimating calories in a meal</a>.</p></article>
 <article class="tool-card" id="energy-goal-planner-card" data-category="planning"><h3 id="energy-goal-planner">10. Energy Needs & Goal Planner</h3><p>Use our free calorie goal planner to adjust your estimated maintenance calories for weight loss, weight gain or weight maintenance. Set a personalized daily calorie target based on your chosen goal.</p><div class="fields"><div class="field"><label for="maintain">Maintenance calories</label><input id="maintain" type="number" min="500" value="2200"></div><div class="field"><label for="adjust">Adjustment</label><select id="adjust"><option value="-250">Gentle reduction (−250)</option><option value="0">Maintain (0)</option><option value="250">Gentle increase (+250)</option></select></div></div><button class="primary" onclick="plannerCalc()">Estimate goal calories</button><div class="result" id="plannerResult" aria-live="polite">Your estimate will appear here.</div><p class="tool-guide-link">Related reading: <a href="guides.html#daily-calories">Learn about daily calorie needs</a>.</p></article>
 </div></section>
+
+<section class="section wrap" id="more-tools">
+  <div class="section-head">
+    <h2>Explore More Calorie Calculators & Nutrition Guides</h2>
+    <p>Use our dedicated calculators and practical guides to learn more about daily energy needs, food calories and meal planning.</p>
+  </div>
+  <div class="more-tools-grid">
+    <article class="more-tools-card">
+      <h3>Free TDEE Calculator</h3>
+      <p>Estimate your total daily energy expenditure using your BMR and activity level.</p>
+      <a href="/calculators/tdee-calculator.html">Open the TDEE calculator</a>
+    </article>
+    <article class="more-tools-card">
+      <h3>Free BMR Calculator</h3>
+      <p>Estimate the calories your body uses at rest with the Mifflin–St Jeor equation.</p>
+      <a href="/calculators/bmr-calculator.html">Open the BMR calculator</a>
+    </article>
+    <article class="more-tools-card">
+      <h3>Food Calorie Calculator</h3>
+      <p>Estimate the calories in common foods and serving sizes.</p>
+      <a href="/calculators/food-calorie-calculator.html">Open the food calorie calculator</a>
+    </article>
+    <article class="more-tools-card">
+      <h3>Meal Calorie Calculator</h3>
+      <p>Add the calories from different foods to estimate a meal total.</p>
+      <a href="/calculators/meal-calorie-calculator.html">Open the meal calorie calculator</a>
+    </article>
+    <article class="more-tools-card">
+      <h3>BMR vs TDEE Explained</h3>
+      <p>Understand the difference between resting energy needs and total daily energy expenditure.</p>
+      <a href="/guides/bmr-vs-tdee.html">Read the BMR vs TDEE guide</a>
+    </article>
+    <article class="more-tools-card">
+      <h3>Daily Calorie Needs Guide</h3>
+      <p>Learn which factors affect your daily calorie needs and how estimates are used.</p>
+      <a href="/guides/daily-calorie-needs.html">Read the daily calorie guide</a>
+    </article>
+    <article class="more-tools-card">
+      <h3>Meal Calories Guide</h3>
+      <p>Learn how portion sizes and ingredients affect the estimated calories in a meal.</p>
+      <a href="/guides/meal-calories.html">Read the meal calories guide</a>
+    </article>
+    <article class="more-tools-card">
+      <h3>Why Food Calorie Values Vary</h3>
+      <p>Explore how recipes, preparation methods and serving sizes change food calorie estimates.</p>
+      <a href="/guides/food-calorie-variation.html">Read the food calorie guide</a>
+    </article>
+  </div>
+</section>
+
 <section class="section wrap" id="food"><div class="section-head"><h2>Common Food Calorie Guide</h2><p>Approximate values only. Recipes, portions and preparation methods can change nutrition.</p></div><p class="food-intro">Explore more nutrition tips and practical advice in our <a href="guides.html#food-calorie-variation">Food Calorie Guide</a> and <a href="guides.html#meal-calories">Meal Calorie Guide</a>.</p>
 <div class="food-list">
 <div class="food-card"><b>Cooked white rice</b><small>~130 kcal / 100 g</small></div><div class="food-card"><b>Chicken breast, cooked</b><small>~165 kcal / 100 g</small></div><div class="food-card"><b>Boiled egg</b><small>~78 kcal / large egg</small></div><div class="food-card"><b>Banana</b><small>~105 kcal / medium</small></div><div class="food-card"><b>Apple</b><small>~52 kcal / 100 g</small></div><div class="food-card"><b>Cooked lentils</b><small>~116 kcal / 100 g</small></div></div></section>
