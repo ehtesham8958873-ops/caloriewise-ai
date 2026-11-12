@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Calorie Goal Planner – Daily Calories and Weeks to Reach Your Goal | CalorieWise AI</title>
+<meta name="description" content="Plan your weight goal with our free calorie goal planner. Enter your TDEE, current and target weight and weekly pace to get daily calories and an estimated timeline.">
+<link rel="canonical" href="https://caloriewise-ai.pages.dev/calculators/calorie-goal-planner.html">
+<meta property="og:title" content="Free Calorie Goal Planner | CalorieWise AI">
+<meta property="og:description" content="Get a daily calorie target and a timeline for your weight goal. Free, no account needed.">
+<meta property="og:url" content="https://caloriewise-ai.pages.dev/calculators/calorie-goal-planner.html">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://caloriewise-ai.pages.dev/"},
+{"@type":"ListItem","position":2,"name":"Calculators","item":"https://caloriewise-ai.pages.dev/calculators/"},
+{"@type":"ListItem","position":3,"name":"Calorie Goal Planner","item":"https://caloriewise-ai.pages.dev/calculators/calorie-goal-planner.html"}]}
+</script>
+<style>
+:root{--bg:#fff;--fg:#1c2b24;--muted:#5b6b63;--brand:#1f8a5b;--card:#f3f8f5;--line:#d8e5de}
+@media (prefers-color-scheme:dark){:root{--bg:#121a16;--fg:#e6efe9;--muted:#9fb1a7;--brand:#4cc78f;--card:#1a2420;--line:#2a3a32}}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--fg)}
+a{color:var(--brand)}
+header,footer,main{max-width:860px;margin:0 auto;padding:16px 20px}
+header{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+.logo{font-weight:700;font-size:1.2rem;text-decoration:none}
+header nav a{margin-right:16px;text-decoration:none}
+.crumbs{font-size:.9rem;color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;margin:20px 0}
+label{display:block;margin:12px 0 4px;font-weight:600}
+input,select{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg);font:inherit}
+button{margin-top:16px;padding:12px 20px;border:0;border-radius:8px;background:var(--brand);color:#fff;font:inherit;font-weight:600;cursor:pointer}
+#result{margin-top:16px;font-size:1.1rem;font-weight:600;line-height:1.8}
+.related ul,.more ul{padding-left:20px}
+footer{border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;font-size:.92rem}
+footer a{display:block;margin:4px 0}
+.muted{color:var(--muted);font-size:.9rem}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">CalorieWise AI</a>
+  <nav aria-label="Main">
+    <a href="/calculators/">Calculators</a>
+    <a href="/calculators/food-calorie-calculator.html">Food calories</a>
+    <a href="/guides.html">Guides</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/#about">About</a>
+  </nav>
+</header>
+
+<main>
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/calculators/">Calculators</a> › Calorie Goal Planner</nav>
+
+  <h1>Free Calorie Goal Planner</h1>
+  <p>Plan a steady weight change with this free calorie goal planner. Enter your maintenance calories, your current and target weight, and a weekly pace to get a daily calorie target and an estimated timeline. Don't know your maintenance calories? Use the <a href="/calculators/tdee-calculator.html">TDEE calculator</a> first.</p>
+
+  <div class="card">
+    <label for="tdee">Maintenance calories / TDEE (kcal/day)</label>
+    <input id="tdee" type="number" min="1000" max="6000" inputmode="numeric" placeholder="e.g. 2400">
+    <label for="cur">Current weight (kg)</label>
+    <input id="cur" type="number" min="30" max="300" step="0.1" inputmode="decimal" placeholder="e.g. 80">
+    <label for="tar">Target weight (kg)</label>
+    <input id="tar" type="number" min="30" max="300" step="0.1" inputmode="decimal" placeholder="e.g. 72">
+    <label for="rate">Weekly pace</label>
+    <select id="rate">
+      <option value="0.25">Slow – 0.25 kg per week</option>
+      <option value="0.5" selected>Steady – 0.5 kg per week</option>
+      <option value="0.75">Faster – 0.75 kg per week</option>
+    </select>
+    <button id="go" type="button">Plan my goal</button>
+    <div id="result" aria-live="polite">Your plan will appear here.</div>
+    <p id="warn" class="muted" hidden>This target is quite low. Very low calorie intake is generally not advised without guidance from a healthcare professional or registered dietitian.</p>
+    <p id="next" class="muted" hidden>Next step: <a href="/calculators/macro-calculator.html">split your target into protein, carbs and fat</a>.</p>
+  </div>
+
+  <h2>How the plan is calculated</h2>
+  <p>About 7,700 calories is commonly used as the energy equivalent of 1 kg of body weight. Your daily difference from maintenance is the weekly pace multiplied by 7,700 and divided by 7. The timeline is your weight difference divided by the weekly pace. These are rough estimates, because real progress varies. See the <a href="/guides/daily-calorie-needs.html">daily calorie needs guide</a> for more.</p>
+
+  <p class="muted">This tool gives general educational estimates, not medical advice. See our <a href="/disclaimer.html">disclaimer</a>. Speak with a qualified healthcare professional if you are under 18, pregnant, breastfeeding, have a medical condition, or have a history of disordered eating.</p>
+
+  <section class="related">
+    <h2>Related calculators</h2>
+    <ul>
+      <li><a href="/calculators/calorie-calculator.html">Try the free daily calorie calculator</a></li>
+      <li><a href="/calculators/tdee-calculator.html">Try the free TDEE calculator</a></li>
+      <li><a href="/calculators/macro-calculator.html">Try the free macro calculator</a></li>
+    </ul>
+  </section>
+
+  <section class="more">
+    <h2>Related guides</h2>
+    <ul>
+      <li><a href="/guides/daily-calorie-needs.html">How daily calorie needs work</a></li>
+      <li><a href="/guides/how-to-calculate-your-tdee.html">How to calculate your TDEE step by step</a></li>
+      <li><a href="/guides.html">All nutrition guides</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div><strong>Calculators</strong>
+    <a href="/calculators/calorie-calculator.html">Daily Calorie Calculator</a>
+    <a href="/calculators/bmr-calculator.html">BMR Calculator</a>
+    <a href="/calculators/tdee-calculator.html">TDEE Calculator</a>
+    <a href="/calculators/protein-calculator.html">Protein Calculator</a>
+    <a href="/calculators/carb-calculator.html">Carbohydrate Calculator</a>
+    <a href="/calculators/fat-calculator.html">Fat Calculator</a>
+    <a href="/calculators/macro-calculator.html">Macro Calculator</a>
+    <a href="/calculators/meal-calorie-calculator.html">Meal Calorie Calculator</a>
+    <a href="/calculators/food-calorie-calculator.html">Food Calorie Calculator</a>
+    <a href="/calculators/calorie-goal-planner.html">Calorie Goal Planner</a>
+  </div>
+  <div><strong>Guides</strong>
+    <a href="/guides/daily-calorie-needs.html">Daily Calorie Needs Guide</a>
+    <a href="/guides/bmr-vs-tdee.html">BMR vs TDEE Guide</a>
+    <a href="/guides/how-to-calculate-your-tdee.html">How to Calculate Your TDEE</a>
+    <a href="/guides/protein-carbs-fat.html">Protein, Carbs and Fat Guide</a>
+    <a href="/guides/how-to-estimate-meal-calories.html">How to Estimate Meal Calories</a>
+    <a href="/guides/why-food-calories-vary.html">Why Food Calories Vary</a>
+  </div>
+  <div><strong>Site</strong>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Use</a>
+    <a href="/disclaimer.html">Disclaimer</a>
+    <p class="muted">© 2026 CalorieWise AI</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('go').addEventListener('click', function () {
+  var tdee = parseFloat(document.getElementById('tdee').value);
+  var cur = parseFloat(document.getElementById('cur').value);
+  var tar = parseFloat(document.getElementById('tar').value);
+  var rate = parseFloat(document.getElementById('rate').value);
+  var out = document.getElementById('result');
+  var warn = document.getElementById('warn');
+  var next = document.getElementById('next');
+  warn.hidden = true; next.hidden = true;
+  if (!(tdee > 0 && cur > 0 && tar > 0)) {
+    out.textContent = 'Please enter valid calories and weights.';
+    return;
+  }
+  var diff = tar - cur;
+  if (diff === 0) {
+    out.textContent = 'Target equals current weight. Eat around ' + Math.round(tdee) + ' kcal/day to maintain.';
+    next.hidden = false;
+    return;
+  }
+  var daily = rate * 7700 / 7;
+  var target = diff < 0 ? tdee - daily : tdee + daily;
+  var weeks = Math.ceil(Math.abs(diff) / rate);
+  out.innerHTML = 'Daily target: ' + Math.round(target) + ' kcal<br>'
+    + (diff < 0 ? 'Deficit' : 'Surplus') + ': about ' + Math.round(daily) + ' kcal/day<br>'
+    + 'Estimated time: about ' + weeks + ' weeks';
+  warn.hidden = !(target < 1200);
+  next.hidden = false;
+});
+</script>
+</body>
+</html>
