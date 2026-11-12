@@ -1,46 +1,26 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <url>
-    <loc>https://caloriewise-ai.pages.dev/</loc>
-    <lastmod>2026-11-09</lastmod>
-  </url>
-
-  <url>
-    <loc>https://caloriewise-ai.pages.dev/guides.html</loc>
-    <lastmod>2026-11-09</lastmod>
-  </url>
-
-  <url>
-    <loc>https://caloriewise-ai.pages.dev/privacy.html</loc>
-    <lastmod>2026-11-09</lastmod>
-  </url>
-
-  <url>
-    <loc>https://caloriewise-ai.pages.dev/terms.html</loc>
-    <lastmod>2026-11-09</lastmod>
-  </url>
-
-  <url>
-    <loc>https://caloriewise-ai.pages.dev/disclaimer.html</loc>
-    <lastmod>2026-11-09</lastmod>
-  </url>
-  <url>
-    <loc>https://caloriewise-ai.pages.dev/guides.html</loc>
-    ...
-  </url>
+  <url><loc>https://caloriewise-ai.pages.dev/</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://caloriewise-ai.pages.dev/guides.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://caloriewise-ai.pages.dev/privacy.html</loc><lastmod>2026-11-09</lastmod></url>
+  <url><loc>https://caloriewise-ai.pages.dev/terms.html</loc><lastmod>2026-11-09</lastmod></url>
+  <url><loc>https://caloriewise-ai.pages.dev/disclaimer.html</loc><lastmod>2026-11-09</lastmod></url>
 
   <url><loc>https://caloriewise-ai.pages.dev/calculators/bmr-calculator.html</loc><lastmod>2026-11-11</lastmod></url>
   <url><loc>https://caloriewise-ai.pages.dev/calculators/tdee-calculator.html</loc><lastmod>2026-11-11</lastmod></url>
   <url><loc>https://caloriewise-ai.pages.dev/calculators/calorie-calculator.html</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://caloriewise-ai.pages.dev/calculators/macro-calculator.html</loc><lastmod>2026-11-11</lastmod></url> 
+  <url><loc>https://caloriewise-ai.pages.dev/calculators/macro-calculator.html</loc><lastmod>2026-11-11</lastmod></url>
   <url><loc>https://caloriewise-ai.pages.dev/calculators/calorie-goal-planner.html</loc><lastmod>2026-11-12</lastmod></url>
-<url><loc>https://caloriewise-ai.pages.dev/calculators/protein-calculator.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://caloriewise-ai.pages.dev/calculators/protein-calculator.html</loc><lastmod>2026-11-12</lastmod></url>
   <url><loc>https://caloriewise-ai.pages.dev/calculators/carb-calculator.html</loc><lastmod>2026-11-12</lastmod></url>
-<url><loc>https://caloriewise-ai.pages.dev/calculators/fat-calculator.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://caloriewise-ai.pages.dev/calculators/fat-calculator.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://caloriewise-ai.pages.dev/calculators/food-calorie-calculator.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://caloriewise-ai.pages.dev/calculators/meal-calorie-calculator.html</loc><lastmod>2026-11-12</lastmod></url>
+
   <url><loc>https://caloriewise-ai.pages.dev/guides/protein-carbs-fat.html</loc><lastmod>2026-11-12</lastmod></url>
   <url><loc>https://caloriewise-ai.pages.dev/guides/daily-calorie-needs.html</loc><lastmod>2026-11-12</lastmod></url>
-<url><loc>https://caloriewise-ai.pages.dev/guides/bmr-vs-tdee.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://caloriewise-ai.pages.dev/guides/bmr-vs-tdee.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://caloriewise-ai.pages.dev/guides/how-to-calculate-your-tdee.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://caloriewise-ai.pages.dev/guides/food-calorie-variation.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://caloriewise-ai.pages.dev/guides/meal-calories.html</loc><lastmod>2026-11-12</lastmod></url>
 </urlset>
-
