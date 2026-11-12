@@ -26,5 +26,14 @@
     <loc>https://caloriewise-ai.pages.dev/disclaimer.html</loc>
     <lastmod>2026-11-09</lastmod>
   </url>
+  <url>
+    <loc>https://caloriewise-ai.pages.dev/guides.html</loc>
+    ...
+  </url>
 
+  <url><loc>https://caloriewise-ai.pages.dev/calculators/bmr-calculator.html</loc><lastmod>2026-11-11</lastmod></url>
+  <url><loc>https://caloriewise-ai.pages.dev/calculators/tdee-calculator.html</loc><lastmod>2026-11-11</lastmod></url>
+  <url><loc>https://caloriewise-ai.pages.dev/calculators/calorie-calculator.html</loc><lastmod>2026-11-11</lastmod></url>
+  <url><loc>https://caloriewise-ai.pages.dev/calculators/macro-calculator.html</loc><lastmod>2026-11-11</lastmod></url>
+</urlset>
 </urlset>
