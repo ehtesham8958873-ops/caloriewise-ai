@@ -10,6 +10,11 @@
 <meta property="og:description" content="Estimate your daily calorie needs in seconds. Free, no account needed.">
 <meta property="og:url" content="https://caloriewise-ai.pages.dev/calculators/calorie-calculator.html">
 <meta property="og:type" content="website">
+  <meta property="og:image" content="https://caloriewise-ai.pages.dev/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Daily Calorie Calculator | CalorieWise AI">
+<meta name="twitter:description" content="Estimate your daily calorie needs for maintaining, losing or gaining weight.">
+<meta name="twitter:image" content="https://caloriewise-ai.pages.dev/og-image.png">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
 {"@type":"ListItem","position":1,"name":"Home","item":"https://caloriewise-ai.pages.dev/"},
@@ -82,7 +87,9 @@ footer a{display:block;margin:4px 0}
     </select>
     <button id="go" type="button">Calculate Calories</button>
     <div id="result" aria-live="polite">Your estimate will appear here.</div>
-    <p id="warn" class="muted" hidden>This result is quite low. Very low calorie intake is generally not advised without guidance from a healthcare professional or registered dietitian.</p>
+   <p id="warn" class="muted" hidden>
+Your estimated calorie target is below 1,200 kcal/day. This may be too low for many adults. Please consult a qualified healthcare professional or registered dietitian before following this target.
+</p>
     <p id="next" class="muted" hidden>Next step: <a href="/calculators/macro-calculator.html">split these calories into protein, carbs and fat</a>, or fine-tune with the <a href="/calculators/calorie-goal-planner.html">calorie goal planner</a>.</p>
   </div>
 
