@@ -10,6 +10,11 @@
 <meta property="og:description" content="Estimate your total daily energy expenditure in seconds. Free, no account needed.">
 <meta property="og:url" content="https://caloriewise-ai.pages.dev/calculators/tdee-calculator.html">
 <meta property="og:type" content="website">
+  <meta property="og:image" content="https://caloriewise-ai.pages.dev/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free TDEE Calculator | CalorieWise AI">
+<meta name="twitter:description" content="Estimate your Total Daily Energy Expenditure with our free TDEE calculator.">
+<meta name="twitter:image" content="https://caloriewise-ai.pages.dev/og-image.png">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
 {"@type":"ListItem","position":1,"name":"Home","item":"https://caloriewise-ai.pages.dev/"},
@@ -59,7 +64,7 @@ footer a{display:block;margin:4px 0}
 
   <div class="card">
     <label for="bmr">Your BMR (kcal/day)</label>
-    <input id="bmr" type="number" min="800" max="4000" inputmode="numeric" placeholder="e.g. 1600">
+  <input id="bmr" type="number" min="500" max="5000" inputmode="numeric" placeholder="e.g. 1600">
     <label for="act">Activity level</label>
     <select id="act">
       <option value="1.2">Sedentary (little or no exercise)</option>
@@ -141,8 +146,8 @@ document.getElementById('go').addEventListener('click', function () {
 
   next.hidden = true;
 
-  if (!Number.isFinite(bmr) || bmr < 800 || bmr > 4000) {
-    out.textContent = 'Please enter a BMR between 800 and 4000 kcal/day.';
+if (!Number.isFinite(bmr) || bmr < 500 || bmr > 5000) {
+  out.textContent = 'Please enter a BMR between 500 and 5000 kcal/day.';
     return;
   }
 
