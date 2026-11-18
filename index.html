@@ -25,7 +25,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="CalorieWise AI – Nutrition Tools">
 <meta name="twitter:image" content="https://caloriewise-ai.pages.dev/og-image.png">
-<link rel="canonical" href="https://caloriewise-ai.pages.dev">
+<link rel="canonical" href="https://caloriewise-ai.pages.dev/">
   <style>
 :root{--green:#16834a;--deep:#0d5630;--mint:#eaf7ef;--ink:#183126;--muted:#64756b;--line:#dce9df;--bg:#f7fbf8;--shadow:0 12px 35px rgba(17,77,43,.08)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
@@ -114,7 +114,7 @@ button.primary,#calculators .tool-card button.primary{display:inline-flex;align-
 </div>
 <button class="primary daily-calc-button" onclick="dailyCalc()">Calculate Calories</button>
 <div class="result" id="dailyResult" aria-live="polite">Your estimate will appear here.</div><p class="tool-guide-link">Related reading: <a href="guides.html#daily-calories">Learn about daily calorie needs</a>.</p></article>
-<article class="tool-card" id="bmr-calculator-card" data-category="daily"><h3 id="bmr-calculator">2. BMR Calculator</h3><p>Use our free BMR calculator to estimate how many calories your body burns at rest. Calculate your Basal Metabolic Rate using the Mifflin–St Jeor equation, based on age, height, weight and sex.</p><div class="fields"><div class="field"><label for="bsex">Sex used by formula</label><select id="bsex"><option value="male">Male</option><option value="female">Female</option></select></div><div class="field"><label for="bage">Age</label><input id="bage" type="number" value="30" min="18" max="100"></div><div class="field"><label for="bweight">Weight (kg)</label><input id="bweight" type="number" value="70" min="25"></div><div class="field"><label for="bheight">Height (cm)</label><input id="bheight" type="number" value="170" min="120"></div></div><button class="primary" onclick="bmrCalc()">Calculate BMR</button><div class="result" id="bmrResult" aria-live="polite">Your estimate will appear here.</div><p class="tool-guide-link">Related reading: <a href="guides.html#bmr-tdee">Learn about BMR and TDEE</a>.</p></article>
+<article class="tool-card" id="bmr-calculator-card" data-category="daily"><h3 id="bmr-calculator">2. BMR Calculator</h3><p>Use our free BMR calculator to estimate how many calories your body burns at rest. Calculate your Basal Metabolic Rate using the Mifflin–St Jeor equation, based on age, height, weight and sex.</p><div class="fields"><div class="field"><label for="bsex">Sex used by formula</label><select id="bsex"><option value="male">Male</option><option value="female">Female</option></select></div><div class="field"><label for="bage">Age</label><input id="bage" type="number" value="30" min="18" max="100"></div><div class="field"><label for="bweight">Weight (kg)</label><input id="bweight" type="number" value="70" min="25" max="300"></div><div class="field"><label for="bheight">Height (cm)</label><input id="bheight" type="number" value="170" min="120" max="230"></div></div><button class="primary" onclick="bmrCalc()">Calculate BMR</button><div class="result" id="bmrResult" aria-live="polite">Your estimate will appear here.</div><p class="tool-guide-link">Related reading: <a href="guides.html#bmr-tdee">Learn about BMR and TDEE</a>.</p></article>
 <article class="tool-card" id="tdee-calculator-card" data-category="daily">
 <h3 id="tdee-calculator">3. TDEE Calculator</h3>
 <p>Estimate your daily calorie needs based on your BMR and activity level.</p>
@@ -234,10 +234,19 @@ const $=id=>document.getElementById(id);
 const num=id=>Number($(id).value);
 function show(id,msg){$(id).innerHTML=msg}
 function validPositive(ids){return ids.every(id=>Number.isFinite(num(id))&&num(id)>0)}
+  function validRange(id,min,max){
+  return Number.isFinite(num(id)) &&
+         num(id)>=min &&
+         num(id)<=max;
+}
 function bmr(sex,age,w,h){return 10*w+6.25*h-5*age+(sex==='male'?5:-161)}
 function dailyCalc(){
   let ids=['age','weight','height'];
-  if(!validPositive(ids)||num('age')<18||num('age')>100||num('height')<120||num('height')>230){
+ if(
+  !validRange('age',18,100) ||
+  !validRange('weight',25,300) ||
+  !validRange('height',120,230)
+){
     show('dailyResult','Enter valid adult age, weight and height.');
     return;
   }
@@ -283,7 +292,11 @@ if (typeof gtag === 'function') {
 function bmrCalc(){
   let ids=['bage','bweight','bheight'];
 
-  if(!validPositive(ids)||num('bage')<18||num('bage')>100){
+ if(
+  !validRange('bage',18,100) ||
+  !validRange('bweight',25,300) ||
+  !validRange('bheight',120,230)
+){
     show('bmrResult','Enter valid adult details.');
     return;
   }
@@ -297,27 +310,27 @@ function bmrCalc(){
 
   show('bmrResult',`Estimated BMR: ${Math.round(bmr($('bsex').value,num('bage'),num('bweight'),num('bheight'))).toLocaleString()} kcal/day`);
 }
-
-
 function tdeeCalc(){
-  if(!validPositive(['tdeeBmr'])){
-    show('tdeeResult','Enter a valid BMR.');
+  if(!validRange('tdeeBmr',500,10000)){
+    show('tdeeResult','Enter a BMR between 500 and 10,000 kcal/day.');
     return;
   }
 
-  // GA4 Event Tracking
   if (typeof gtag === 'function') {
     gtag('event', 'calculator_used', {
       calculator_name: 'TDEE Calculator'
     });
   }
 
-  show('tdeeResult',`Estimated TDEE: ${Math.round(num('tdeeBmr')*num('tdeeActivity')).toLocaleString()} kcal/day`);
+  show('tdeeResult',
+    `Estimated TDEE: ${Math.round(
+      num('tdeeBmr')*num('tdeeActivity')
+    ).toLocaleString()} kcal/day`
+  );
 }
 
-
 function foodCalc(){
-  if(!validPositive(['servings'])){
+if(!validRange('servings',0.1,100)){
     show('foodResult','Enter a serving amount greater than zero.');
     return;
   }
@@ -334,7 +347,7 @@ function foodCalc(){
 
 
 function proteinCalc(){
-  if(!validPositive(['pweight'])){
+if(!validRange('pweight',25,300)){
     show('proteinResult','Enter a valid weight.');
     return;
   }
@@ -355,7 +368,7 @@ function proteinCalc(){
 function carbCalc(){
   let c=num('carbCalories'),p=num('carbPercent');
 
-  if(!validPositive(['carbCalories','carbPercent'])||p>100){
+if(!validRange('carbCalories',500,10000)||!validRange('carbPercent',1,100)){
     show('carbResult','Enter valid calories and a percentage from 1 to 100.');
     return;
   }
@@ -374,12 +387,11 @@ function carbCalc(){
 function fatCalc(){
   let c=num('fatCalories'),p=num('fatPercent');
 
-  if(!validPositive(['fatCalories','fatPercent'])||p>100){
+  if(!validRange('fatCalories',500,10000)||!validRange('fatPercent',1,100)){
     show('fatResult','Enter valid calories and a percentage from 1 to 100.');
     return;
   }
 
-  // GA4 Event Tracking
   if (typeof gtag === 'function') {
     gtag('event', 'calculator_used', {
       calculator_name: 'Fat Calculator'
@@ -389,8 +401,6 @@ function fatCalc(){
   show('fatResult',`Estimated fat: ${Math.round(c*p/100/9)} g/day`);
 }
 
-
-
 function macroCalc(){
   let c=num('macroCalories');
   let p=num('macroProtein');
@@ -398,7 +408,7 @@ function macroCalc(){
   let f=num('macroFat');
 
   if(
-    !validPositive(['macroCalories']) ||
+    !validRange('macroCalories',500,10000) ||
     [p,cb,f].some(x=>!Number.isFinite(x)||x<0||x>100) ||
     Math.abs(p+cb+f-100)>.01
   ){
@@ -438,7 +448,7 @@ function mealCalc(){
 
 
 function plannerCalc(){
-  if(!validPositive(['maintain'])){
+  if(!validRange('maintain',500,10000)){
     show('plannerResult','Enter a valid maintenance estimate.');
     return;
   }
