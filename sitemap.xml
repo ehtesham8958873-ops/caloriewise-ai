@@ -1,54 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <url>
-    <loc>https://caloriewise-ai.pages.dev/</loc>
-  </url>
-  <url>
-    <loc>https://caloriewise-ai.pages.dev/guides.html</loc>
-  </url>
-  <url>
-    <loc>https://caloriewise-ai.pages.dev/privacy.html</loc>
-  </url>
-  <url>
-    <loc>https://caloriewise-ai.pages.dev/terms.html</loc>
-  </url>
-  <url>
-    <loc>https://caloriewise-ai.pages.dev/disclaimer.html</loc>
-  </url>
-
-  <url>
-    <loc>https://caloriewise-ai.pages.dev/calculators/bmr-calculator.html</loc>
-  </url>
-  <url>
-    <loc>https://caloriewise-ai.pages.dev/calculators/calorie-calculator.html</loc>
-  </url>
-  <url>
-    <loc>https://caloriewise-ai.pages.dev/calculators/calorie-goal-planner.html</loc>
-  </url>
-  <url>
-    <loc>https://caloriewise-ai.pages.dev/calculators/carb-calculator.html</loc>
-  </url>
-  <url>
-    <loc>https://caloriewise-ai.pages.dev/calculators/fat-calculator.html</loc>
-  </url>
-  <url>
-    <loc>https://caloriewise-ai.pages.dev/calculators/food-calorie-calculator</loc>
-  </url>
-  <url>
-    <loc>https://caloriewise-ai.pages.dev/calculators/macro-calculator.html</loc>
-  </url>
-  <url>
-    <loc>https://caloriewise-ai.pages.dev/calculators/meal-calorie-calculator</loc>
-  </url>
-  <url>
-    <loc>https://caloriewise-ai.pages.dev/calculators/protein-calculator.html</loc>
-  </url>
-  <url>
-    <loc>https://caloriewise-ai.pages.dev/calculators/tdee-calculator.html</loc>
-  </url>
-
-</urlset>
--calorie-variation.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://caloriewise-ai.pages.dev/guides/meal-calories.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://caloriewise-ai.pages.dev/</loc></url>
+  <url><loc>https://caloriewise-ai.pages.dev/guides.html</loc></url>
+  <url><loc>https://caloriewise-ai.pages.dev/privacy.html</loc></url>
+  <url><loc>https://caloriewise-ai.pages.dev/terms.html</loc></url>
+  <url><loc>https://caloriewise-ai.pages.dev/disclaimer.html</loc></url>
+  <url><loc>https://caloriewise-ai.pages.dev/calculators/bmr-calculator.html</loc></url>
+  <url><loc>https://caloriewise-ai.pages.dev/calculators/calorie-calculator.html</loc></url>
+  <url><loc>https://caloriewise-ai.pages.dev/calculators/calorie-goal-planner.html</loc></url>
+  <url><loc>https://caloriewise-ai.pages.dev/calculators/carb-calculator.html</loc></url>
+  <url><loc>https://caloriewise-ai.pages.dev/calculators/fat-calculator.html</loc></url>
+  <url><loc>https://caloriewise-ai.pages.dev/calculators/food-calorie-calculator</loc></url>
+  <url><loc>https://caloriewise-ai.pages.dev/calculators/macro-calculator.html</loc></url>
+  <url><loc>https://caloriewise-ai.pages.dev/calculators/meal-calorie-calculator</loc></url>
+  <url><loc>https://caloriewise-ai.pages.dev/calculators/protein-calculator.html</loc></url>
+  <url><loc>https://caloriewise-ai.pages.dev/calculators/tdee-calculator.html</loc></url>
 </urlset>
